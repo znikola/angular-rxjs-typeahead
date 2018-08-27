@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:fix": "pretty-quick --staged",
-    "precommit": "run-s format:fix lint"
+    "precommit": "run-s format:fix lint",
+    "prettier": "prettier --config ./.prettierrc --list-different \"src/**/*{.ts,.js,.json,.scss}\"",
+    "prettier-fix": "prettier --config ./.prettierrc --list-different \"src/**/*{.ts,.js,.json,.scss}\" --write"
   },
   "private": true,
   "dependencies": {
