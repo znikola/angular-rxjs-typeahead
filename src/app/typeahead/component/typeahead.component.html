@@ -10,6 +10,16 @@
 <br>
 <br>
 <div>Results:</div>
-<div *ngFor="let result of searchResults$ | async">
-  <ul>{{result.name}}</ul>
+
+<div>
+  <div *ngIf="errorMessage">{{errorMessage}}</div>
+  <ul>
+    <li *ngFor="let result of searchResults$ | async">
+      <a href="#" (click)="openCharacter(result.url)">{{result.name}}</a>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="character$ | async as character">
+  <div>{{character | json}}</div>
 </div>
