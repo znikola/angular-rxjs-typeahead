@@ -1,0 +1,15 @@
+<label>
+  Search:
+  <input type="text" [formControl]="search">
+</label>
+<button type="submit">Search</button>
+<p>
+  Search for a StarWars character. Try searching for 'r', 'r2', 'r2d2'
+</p>
+
+<br>
+<br>
+<div>Results:</div>
+<div *ngFor="let result of searchResults$ | async">
+  <ul>{{result.name}}</ul>
+</div>
